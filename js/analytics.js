@@ -125,11 +125,25 @@ class ValuationAnalytics {
   initScrollTracking() {
     let ticking = false;
 
-    const checkScroll = () => {
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const checkScroll = (customContainer = null) => {
+      let scrollTop, docHeight;
+
+      if (customContainer && customContainer !== window) {
+        scrollTop = customContainer.scrollTop;
+        docHeight = customContainer.scrollHeight - customContainer.clientHeight;
+      } else {
+        const phoneContainer = document.getElementById('phone-scrollable-area');
+        if (phoneContainer && phoneContainer.scrollHeight > phoneContainer.clientHeight) {
+          scrollTop = phoneContainer.scrollTop;
+          docHeight = phoneContainer.scrollHeight - phoneContainer.clientHeight;
+        } else {
+          scrollTop = window.scrollY || document.documentElement.scrollTop;
+          docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        }
+      }
+
       if (docHeight <= 0) return;
 
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const scrollPercent = Math.min(100, Math.round((scrollTop / docHeight) * 100));
 
       if (scrollPercent > this.maxScrollPercent) {
@@ -155,12 +169,30 @@ class ValuationAnalytics {
       ticking = false;
     };
 
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(checkScroll);
-        ticking = true;
+    const attachScrollListeners = () => {
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => checkScroll(window));
+          ticking = true;
+        }
+      }, { passive: true });
+
+      const phoneContainer = document.getElementById('phone-scrollable-area');
+      if (phoneContainer) {
+        phoneContainer.addEventListener('scroll', () => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => checkScroll(phoneContainer));
+            ticking = true;
+          }
+        }, { passive: true });
       }
-    }, { passive: true });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', attachScrollListeners);
+    } else {
+      attachScrollListeners();
+    }
   }
 
   /**

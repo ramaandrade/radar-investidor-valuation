@@ -1,0 +1,460 @@
+/**
+ * smartphone.css
+ * Moldura e Ferramenta de Smartphone (Mobile Device Mockup & Simulator)
+ * Proporciona a experiência realista de celular no desktop e adaptação fluida em telas mobile reais.
+ */
+
+:root {
+  --phone-width: 420px;
+  --phone-height: 860px;
+  --phone-radius: 46px;
+  --phone-bezel: 12px;
+  --phone-border: #2D3748;
+  --phone-bg-chassis: linear-gradient(145deg, #1E293B, #0F172A);
+  --phone-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 10px 25px rgba(0, 0, 0, 0.5), inset 0 0 4px rgba(255, 255, 255, 0.15);
+}
+
+/* Wrapper Geral do Ambiente (Desktop Canvas) */
+.desktop-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 24px 16px;
+  background: radial-gradient(circle at 50% 10%, #064E3B 0%, #080D1A 60%, #030712 100%);
+  position: relative;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Barra Superior de Controles do Simulador no Desktop */
+.desktop-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: var(--phone-width);
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 8px 14px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 99px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #94A3B8;
+  font-size: 0.78rem;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.desktop-controls-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #F8FAFC;
+}
+
+.app-badge-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, #059669, #10B981);
+  color: #FFFFFF;
+  padding: 3px 9px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.desktop-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.frame-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #CBD5E1;
+  padding: 4px 11px;
+  border-radius: 99px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.frame-btn:hover {
+  background: rgba(16, 185, 129, 0.25);
+  color: #34D399;
+  border-color: rgba(52, 211, 153, 0.4);
+  transform: translateY(-1px);
+}
+
+/* O APARELHO CELULAR (Chassis Físico) */
+.smartphone-device {
+  position: relative;
+  width: var(--phone-width);
+  max-width: 100%;
+  height: var(--phone-height);
+  border-radius: var(--phone-radius);
+  background: var(--phone-bg-chassis);
+  padding: var(--phone-bezel);
+  box-shadow: var(--phone-shadow);
+  border: 4px solid var(--phone-border);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Botões Físicos Laterais do Smartphone */
+.phone-btn-volume-up,
+.phone-btn-volume-down,
+.phone-btn-power {
+  position: absolute;
+  background: #334155;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.phone-btn-volume-up {
+  left: -8px;
+  top: 135px;
+  width: 5px;
+  height: 48px;
+}
+
+.phone-btn-volume-down {
+  left: -8px;
+  top: 195px;
+  width: 5px;
+  height: 48px;
+}
+
+.phone-btn-power {
+  right: -8px;
+  top: 155px;
+  width: 5px;
+  height: 68px;
+}
+
+.phone-btn-volume-up:hover,
+.phone-btn-volume-down:hover,
+.phone-btn-power:hover {
+  background: #10B981;
+}
+
+/* TELA DO SMARTPHONE (Touchscreen Container) */
+.smartphone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(var(--phone-radius) - var(--phone-bezel));
+  background: #080D1A;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  user-select: auto;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Barra de Status do Celular */
+.phone-status-bar {
+  height: 38px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  z-index: 120;
+  background: rgba(8, 13, 26, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.status-time {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  letter-spacing: -0.2px;
+}
+
+/* Ilha Dinâmica / Entalhe Notch */
+.dynamic-island {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 24px;
+  background: #000000;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  z-index: 130;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.island-camera {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #0F172A;
+  border: 1px solid #1E293B;
+  position: relative;
+}
+
+.island-camera::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #059669;
+  opacity: 0.8;
+}
+
+.island-sensor {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #1E293B;
+}
+
+/* Ícones de Rede e Bateria */
+.status-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-network {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5px;
+  height: 9px;
+}
+
+.network-bar {
+  width: 2.5px;
+  background: #F8FAFC;
+  border-radius: 0.5px;
+}
+.network-bar:nth-child(1) { height: 3px; }
+.network-bar:nth-child(2) { height: 5px; }
+.network-bar:nth-child(3) { height: 7px; }
+.network-bar:nth-child(4) { height: 9px; }
+
+.status-wifi {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--brand-emerald-glow);
+}
+
+.status-battery {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.65rem;
+}
+
+.battery-pill {
+  width: 19px;
+  height: 10px;
+  border: 1px solid #94A3B8;
+  border-radius: 3px;
+  padding: 1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.battery-pill::after {
+  content: "";
+  position: absolute;
+  right: -3px;
+  top: 2.5px;
+  width: 1.5px;
+  height: 4px;
+  background: #94A3B8;
+  border-radius: 0 1px 1px 0;
+}
+
+.battery-fill {
+  height: 100%;
+  width: 92%;
+  background: #10B981;
+  border-radius: 1.5px;
+}
+
+/* Container de Rolagem do Conteúdo dentro do Smartphone */
+.phone-scroll-content {
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Barra inferior Home Indicator (estilo iOS) */
+.phone-home-indicator {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 125px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 99px;
+  z-index: 125;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   MODO TELA CHEIA (ALTERNÂNCIA DINÂMICA)
+   ========================================================================== */
+body.fullscreen-mode .desktop-wrapper {
+  padding: 0;
+  background: #080D1A;
+}
+
+body.fullscreen-mode .desktop-controls-bar {
+  position: fixed;
+  top: 10px;
+  right: 12px;
+  width: auto;
+  margin-bottom: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.95);
+}
+
+body.fullscreen-mode .desktop-controls-left {
+  display: none;
+}
+
+body.fullscreen-mode .smartphone-device {
+  width: 100%;
+  max-width: 520px;
+  height: 100vh;
+  height: 100dvh;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+body.fullscreen-mode .phone-btn-volume-up,
+body.fullscreen-mode .phone-btn-volume-down,
+body.fullscreen-mode .phone-btn-power {
+  display: none;
+}
+
+body.fullscreen-mode .smartphone-screen {
+  border-radius: 0;
+}
+
+/* ==========================================================================
+   ADAPTAÇÃO AUTOMÁTICA EM CELULARES REAIS (< 520px)
+   ========================================================================== */
+@media (max-width: 520px) {
+  .desktop-wrapper {
+    padding: 0;
+    background: #080D1A;
+  }
+
+  .desktop-controls-bar {
+    display: none;
+  }
+
+  .smartphone-device {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    border-radius: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+  .phone-btn-volume-up,
+  .phone-btn-volume-down,
+  .phone-btn-power {
+    display: none;
+  }
+
+  .smartphone-screen {
+    border-radius: 0;
+  }
+}
+
+/* ==========================================================================
+   POSICIONAMENTO DOS COMPONENTES DENTRO DA TELA DO SMARTPHONE
+   ========================================================================== */
+
+.smartphone-screen .sticky-footer-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  padding: 10px 14px 18px;
+  background: linear-gradient(180deg, rgba(8, 13, 26, 0) 0%, rgba(8, 13, 26, 0.96) 28%, #080D1A 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.smartphone-screen .mobile-app-wrapper {
+  padding-bottom: 100px;
+  max-width: 100%;
+}
+
+.smartphone-screen .toast-container {
+  position: absolute;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-120px);
+  z-index: 200;
+  width: 92%;
+  max-width: 380px;
+}
+
+.smartphone-screen .toast-container.is-active {
+  transform: translateX(-50%) translateY(0);
+}
+
+.smartphone-screen .modal-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 300;
+}
+
+.smartphone-screen .modal-sheet {
+  max-height: 88%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-bottom: 24px;
+}
+

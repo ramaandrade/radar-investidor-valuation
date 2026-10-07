@@ -81,13 +81,8 @@ html {
 /* Ajustes de Tipografia Dinâmica via clamp() e Orientação */
 body {
   background-color: var(--bg-main);
-  background-image: var(--grad-glow);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  padding-bottom: calc(105px + env(safe-area-inset-bottom, 20px));
+  margin: 0;
   font-size: clamp(0.95rem, 0.88rem + 0.35vw, 1.08rem);
   line-height: clamp(1.48, 1.42 + 0.3vw, 1.62);
 }

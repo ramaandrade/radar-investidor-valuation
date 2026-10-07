@@ -1,8 +1,9 @@
-const CACHE_NAME = 'radar-valuation-v1';
+const CACHE_NAME = 'radar-valuation-v2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './css/styles.css',
+  './css/smartphone.css',
   './js/app.js',
   './js/analytics.js',
   './manifest.json',

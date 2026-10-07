@@ -48,6 +48,34 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   /**
+   * Relógio Dinâmico do Smartphone em Tempo Real
+   */
+  const updatePhoneClock = () => {
+    const clockEl = document.getElementById('phone-clock');
+    if (!clockEl) return;
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    clockEl.textContent = `${hours}:${minutes}`;
+  };
+  updatePhoneClock();
+  setInterval(updatePhoneClock, 10000);
+
+  /**
+   * Alternar entre Moldura de Celular e Tela Cheia
+   */
+  const frameToggleBtn = document.getElementById('frame-toggle-btn');
+  if (frameToggleBtn) {
+    frameToggleBtn.addEventListener('click', () => {
+      triggerHaptic(15);
+      document.body.classList.toggle('fullscreen-mode');
+      const isFullscreen = document.body.classList.contains('fullscreen-mode');
+      frameToggleBtn.innerHTML = isFullscreen ? '📱 Modo Celular' : '🖥️ Tela Cheia';
+      window.valuationAnalytics.logEvent('frame_mode_toggled', { mode: isFullscreen ? 'fullscreen' : 'smartphone_chassis' });
+    });
+  }
+
+  /**
    * Atualização de Progresso de Leitura
    */
   const updateProgress = () => {
@@ -304,7 +332,12 @@ document.addEventListener('DOMContentLoaded', () => {
       window.valuationAnalytics.logEvent('toast_action_chosen', { action: 'review_content' });
 
       // Rola suavemente até o primeiro card fechado ou até o topo
-      window.scrollTo({ top: 120, behavior: 'smooth' });
+      const scrollArea = document.getElementById('phone-scrollable-area');
+      if (scrollArea) {
+        scrollArea.scrollTo({ top: 120, behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 120, behavior: 'smooth' });
+      }
     });
   }
 
