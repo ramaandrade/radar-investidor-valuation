@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="theme-color" content="#064E3B">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Passo 6: Radar do Investidor: Avaliação de Empresas (Valuation) - Fast Page mobile para prática do mercado e blindagem contra ilusões contábeis.">
+  <title>Passo 6 - Radar do Investidor: Avaliação de Empresas (Valuation)</title>
+  
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/svg+xml" href="./assets/icon-192.svg">
+  <link rel="apple-touch-icon" href="./assets/icon-192.svg">
+
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <!-- Container Mobile-First Centrado -->
+  <main class="mobile-app-wrapper" role="main">
+    
+    <!-- Topbar: Conectividade & Telemetria do Docente -->
+    <header class="app-topbar">
+      <div id="offline-status-pill" class="offline-pill" role="status" aria-live="polite">
+        <span class="status-dot"></span>
+        <span class="status-text">Online • Cache Ativo</span>
+      </div>
+
+      <div class="topbar-actions">
+        <button id="open-inspector-btn" class="telemetry-btn" type="button" title="Painel de Telemetria do Professor">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 20v-6M6 20V10M18 20V4"/>
+          </svg>
+          Scroll: <strong id="telemetry-scroll-badge">0%</strong>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero / Cabeçalho do Aulão -->
+    <section class="app-hero">
+      <div class="hero-tag">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="m10 15 5-3-5-3v6z"/>
+        </svg>
+        Etapa Final Pré-Avaliação • Valuation
+      </div>
+
+      <h1 class="hero-title">
+        Passo 6: <span class="gradient-text">Radar do Investidor</span><br>
+        Avaliação de Empresas
+      </h1>
+      
+      <p class="hero-description">
+        Como o <strong>Valuation</strong> funciona no mundo real: saia das planilhas teóricas e sente-se na cadeira de um analista de mercado. Blinde-se contra ilusões contábeis e narrativas infladas.
+      </p>
+
+      <!-- Sequência Pedagógica dos 6 Passos -->
+      <div class="step-track" aria-label="Trilha de aprendizagem">
+        <div class="step-chip">1. Teoria</div>
+        <div class="step-chip">2. Vídeos</div>
+        <div class="step-chip">3. Slides</div>
+        <div class="step-chip">4. Casos</div>
+        <div class="step-chip">5. Jogos</div>
+        <div class="step-chip active">6. Radar</div>
+      </div>
+
+      <!-- Barra de Progresso de Leitura -->
+      <div class="progress-container" aria-label="Progresso da leitura">
+        <div class="progress-header">
+          <span class="progress-label">Progresso do Aulão</span>
+          <span id="reading-progress-text" class="progress-value">1/3 explorados</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+          <div id="reading-progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controles Rápidos -->
+    <section class="quick-controls" aria-label="Controles da leitura">
+      <span class="section-hint">Tópicos Essenciais</span>
+      <button id="toggle-all-btn" class="toggle-all-button" type="button">Expandir todos</button>
+    </section>
+
+    <!-- Container dos Cards Acordeões (Blocos de Cor Alternados) -->
+    <div class="cards-container">
+
+      <!-- ====================================================================
+           CARD A: O MINDSET (COMPORTAMENTO E VISÃO)
+           ==================================================================== -->
+      <article class="modular-card is-open" data-card-id="card-a" id="secao-mindset">
+        <button class="card-header" type="button" aria-expanded="true" aria-controls="content-card-a">
+          <div class="card-icon-wrapper color-a" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2a8 8 0 0 0-8 8c0 3 2.5 5.5 4 7v3h8v-3c1.5-1.5 4-4 4-7a8 8 0 0 0-8-8z"/>
+              <path d="M10 22h4"/>
+            </svg>
+          </div>
+          <div class="card-title-group">
+            <span class="card-badge">Card A • Comportamento e Visão</span>
+            <h2 class="card-title">O Mindset: Arte, Ciência & Fosso</h2>
+          </div>
+          <div class="card-chevron" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </div>
+        </button>
+
+        <div class="card-content" id="content-card-a">
+          <p class="content-lead">
+            Antes de abrir qualquer planilha no Excel, o analista profissional precisa calibrar o cérebro contra as ilusões de projeção:
+          </p>
+
+          <!-- Tópico 1: Valuation é Arte e Ciência -->
+          <div class="topic-block">
+            <div class="topic-header">
+              <span class="topic-tag">Equilíbrio</span>
+              <h3 class="topic-title">Valuation é Arte e Ciência</h3>
+            </div>
+            <p class="topic-body">
+              Uma planilha não prevê o futuro. O Valuation é <strong>50% matemática</strong> (modelagem financeira rigorosa) e <strong>50% história</strong> (a narrativa da empresa, vantagens competitivas e qualidade da gestão executiva). Uma boa avaliação exige que <strong>os números confirmem a história</strong>. Se a história for fabulosa mas os números não fecharem, é fantasia de marketing.
+            </p>
+          </div>
+
+          <!-- Tópico 2: Garbage In, Garbage Out (GIGO) -->
+          <div class="topic-block">
+            <div class="topic-header">
+              <span class="topic-tag">Armadilha FCD</span>
+              <h3 class="topic-title">Garbage In, Garbage Out (GIGO)</h3>
+            </div>
+            <p class="topic-body">
+              No Fluxo de Caixa Descontado (<strong class="term-val">FCD</strong>), se você inserir premissas absurdas de crescimento (<em>lixo entrando</em>), a planilha vai te cuspir um valor justo estratosférico e irreal (<em>lixo saindo</em>). Seja sempre conservador nas suas estimativas de taxa terminal e receita futura.
+            </p>
+
+            <!-- Mini Simulador Interativo GIGO -->
+            <div class="gigo-sim-card">
+              <div class="sim-header">
+                <span class="sim-title">⚡ Laboratório Prático de GIGO</span>
+                <span id="gigo-status-display" class="sim-val-status status-safe">Estimativa Prudente</span>
+              </div>
+              <div class="sim-slider-group">
+                <div class="sim-slider-label">
+                  <span>Premissa de Crescimento Anual (FCD):</span>
+                  <strong id="gigo-growth-display" class="term-val">6% ao ano</strong>
+                </div>
+                <input id="gigo-slider" class="sim-range-input" type="range" min="2" max="45" value="6" step="1">
+              </div>
+              <div class="sim-results">
+                <div>
+                  <span style="font-size: 0.72rem; color: #94A3B8; text-transform: uppercase;">Valor Justo Estimado / Ação</span>
+                  <div id="gigo-valuation-display" class="sim-val-number">R$ 41,10</div>
+                </div>
+                <span style="font-size: 0.75rem; color: #CBD5E1; max-width: 140px; text-align: right;">
+                  Arraste para ver a distorção da premissa
+                </span>
+              </div>
+            </div>
+
+            <div class="callout-box callout-warning">
+              <span class="callout-icon">💡</span>
+              <div>
+                <strong>A Regra de Ouro do Analista:</strong> O papel aceita qualquer número. Nunca aceite um modelo de <strong class="term-val">FCD</strong> sem antes auditar a taxa de desconto e a taxa de crescimento na perpetuidade (<em>g</em>).
+              </div>
+            </div>
+          </div>
+
+          <!-- Tópico 3: O Fosso Econômico (Moat) -->
+          <div class="topic-block">
+            <div class="topic-header">
+              <span class="topic-tag">Durabilidade</span>
+              <h3 class="topic-title">O "Fosso Econômico" (<span class="term-val">Moat</span>)</h3>
+            </div>
+            <p class="topic-body">
+              Por que esta empresa não será engolida pela concorrência amanhã? Busque empresas com vantagens competitivas duráveis. Sem um <strong class="term-val">Moat</strong> sólido, os lucros extraordinários atraem novos concorrentes e os fluxos futuros evaporam.
+            </p>
+
+            <!-- Grid Visual de Moats -->
+            <div class="moat-grid">
+              <div class="moat-item">
+                <span class="moat-icon">🍎</span>
+                <div class="moat-info">
+                  <strong>Marca Forte & Poder de Preço:</strong>
+                  <p>Consumidores pagam ágio e recusam substitutos (ex: <em>Apple</em>). A empresa repassa inflação sem perder volume.</p>
+                </div>
+              </div>
+              <div class="moat-item">
+                <span class="moat-icon">💼</span>
+                <div class="moat-info">
+                  <strong>Custo de Troca Elevado (Switching Cost):</strong>
+                  <p>Mudar de fornecedor é caro e arriscado (ex: softwares ERP como <em>SAP</em> e <em>TOTVS</em>). Clientes fiéis por anos.</p>
+                </div>
+              </div>
+              <div class="moat-item">
+                <span class="moat-icon">🌐</span>
+                <div class="moat-info">
+                  <strong>Efeito de Rede (Network Effects):</strong>
+                  <p>Cada novo usuário aumenta o valor do ecossistema para todos os outros (ex: <em>WhatsApp, Visa, Mercado Livre</em>).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- ====================================================================
+           CARD B: A MECÂNICA PRÁTICA (AÇÕES DO ANALISTA)
+           ==================================================================== -->
+      <article class="modular-card" data-card-id="card-b" id="secao-mecanica">
+        <button class="card-header" type="button" aria-expanded="false" aria-controls="content-card-b">
+          <div class="card-icon-wrapper color-b" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 3v18h18"/>
+              <path d="m19 9-5 5-4-4-3 3"/>
+            </svg>
+          </div>
+          <div class="card-title-group">
+            <span class="card-badge">Card B • Ações do Analista</span>
+            <h2 class="card-title">A Mecânica Prática: Caixa, Múltiplos & Dívida</h2>
+          </div>
+          <div class="card-chevron" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </div>
+        </button>
+
+        <div class="card-content" id="content-card-b">
+          <p class="content-lead">
+            Saia do terreno teórico da contabilidade tradicional e aprenda o que os analistas experientes de equity research realmente observam:
+          </p>
+
+          <!-- Tópico 1: Cuidado com o Lucro Contábil -->
+          <div class="topic-block">
+            <div class="topic-header">
+              <span class="topic-tag">Geração Real</span>
+              <h3 class="topic-title">Cuidado com o "Lucro Contábil"</h3>
+            </div>
+            <p class="topic-body">
+              Lucro no papel não paga dívida nem distribui dividendo; <strong>o que paga é Geração de Caixa</strong>. Aprenda a abrir a <strong class="term-val">DFC</strong> (Demonstração dos Fluxos de Caixa), especialmente o Fluxo de Caixa Livre (<strong class="term-val">FCL</strong>). É o dinheiro vivo que sobra após a companhia pagar todas as despesas operacionais e reinvestir no próprio negócio (Capex essencial).
+            </p>
+            <div class="callout-box callout-tip">
+              <span class="callout-icon">💰</span>
+              <div>
+                <strong>Fórmula de Bolso:</strong> <strong class="term-val">FCL = Fluxo de Caixa Operacional (FCO) - Capex</strong>. Se o Lucro Líquido cresce mas o FCL está negativo trimestre após trimestre, investigue a qualidade das contas a receber!
+              </div>
+            </div>
+          </div>
+
+          <!-- Tópico 2: A Armadilha dos Múltiplos -->
+          <div class="topic-block">
+            <div class="topic-header">
+              <span class="topic-tag">Relativo</span>
+              <h3 class="topic-title">A Armadilha dos Múltiplos</h3>
+            </div>
+            <p class="topic-body">
+              Comparar o <strong class="term-val">P/L</strong> (Preço sobre Lucro) ou <strong class="term-val">EV/EBITDA</strong> é rápido e popular, mas <strong>nunca compare maçãs com laranjas</strong>. Múltiplos só fazem sentido quando comparados entre pares diretos do mesmo setor ou contra a média histórica da própria empresa ajustada pelo ciclo econômico.
+            </p>
+
+            <div class="topic-body" style="margin-top: 10px; background: rgba(0,0,0,0.25); border-radius: 8px; padding: 12px; border: 1px solid var(--border-subtle);">
+              <div style="font-weight: 700; color: #FFFFFF; margin-bottom: 6px;">Exemplo de Choque de Realidade:</div>
+              <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 6px;">
+                <li>🚀 <strong>Startup de Tecnologia (P/L de 20x):</strong> Crescendo receita a 40% ao ano pode estar barata, pois o lucro futuro diluirá o múltiplo rapidamente (PEG ratio baixo).</li>
+                <li>🏭 <strong>Siderúrgica Tradicional (P/L de 20x):</strong> Indústria cíclica e intensiva em capital crescendo 3% ao ano está <strong>caríssima</strong> no topo do ciclo de commodities.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Tópico 3: Dívida é uma Lupa -->
+          <div class="topic-block">
+            <div class="topic-header">
+              <span class="topic-tag">Alavancagem</span>
+              <h3 class="topic-title">Dívida é uma Lupa</h3>
+            </div>
+            <p class="topic-body">
+              A dívida financeira funciona como uma lente de aumento: amplifica o Retorno sobre o Patrimônio Líquido (ROE) em períodos de bonança econômica, mas <strong>acelera a rota da falência</strong> em tempos de juros (Selic) elevados e retração de demanda.
+            </p>
+            <p class="topic-body" style="margin-top: 8px;">
+              Monitore religiosamente a relação <strong class="term-val">Dívida Líquida / EBITDA</strong>:
+            </p>
+
+            <!-- Simulador de Termômetro de Alavancagem -->
+            <div class="leverage-meter-card">
+              <span style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted);">
+                Teste o Efeito da Dívida Líquida / EBITDA:
+              </span>
+              <div class="leverage-selector">
+                <button class="leverage-btn active" data-ratio="1.2" type="button">1,2x (Conservador)</button>
+                <button class="leverage-btn" data-ratio="2.4" type="button">2,4x (Atenção)</button>
+                <button class="leverage-btn btn-danger" data-ratio="4.5" type="button">4,5x (> 3x Alerta)</button>
+              </div>
+              <div id="leverage-result-text" class="leverage-result-box">
+                🟢 <strong>1,2x (Conservadora / Saudável):</strong> A empresa quita sua dívida com pouco mais de 1 ano de lucro operacional. Fica protegida caso a Selic suba.
+              </div>
+            </div>
+
+            <div class="callout-box callout-danger" style="margin-top: 12px;">
+              <span class="callout-icon">🚨</span>
+              <div>
+                <strong>Regra da Prova & Mercado:</strong> Relação <strong class="term-val">Dívida Líquida / EBITDA maior que 3x</strong> acende o sinal amarelo/vermelho. Verifique os vencimentos de curto prazo no passivo circulante!
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- ====================================================================
+           CARD C: TOOLKIT DA INTERNET (AS FERRAMENTAS DE CAMPO)
+           ==================================================================== -->
+      <article class="modular-card" data-card-id="card-c" id="secao-toolkit">
+        <button class="card-header" type="button" aria-expanded="false" aria-controls="content-card-c">
+          <div class="card-icon-wrapper color-c" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <div class="card-title-group">
+            <span class="card-badge">Card C • Ferramentas de Campo</span>
+            <h2 class="card-title">Toolkit da Internet: Atalhos dos Analistas</h2>
+          </div>
+          <div class="card-chevron" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </div>
+        </button>
+
+        <div class="card-content" id="content-card-c">
+          <p class="content-lead">
+            As quatro armas digitais gratuitas mais usadas no mercado financeiro. Toque nos cartões para abrir as plataformas oficiais em nova aba:
+          </p>
+
+          <div class="toolkit-grid">
+
+            <!-- Ferramenta 1: Sites de RI -->
+            <a href="https://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm" 
+               target="_blank" rel="noopener noreferrer" class="toolkit-link-btn" data-category="RI">
+              <div class="toolkit-link-info">
+                <div class="toolkit-title-row">
+                  <span class="toolkit-link-title">Sites de RI (Relações com Investidores)</span>
+                  <span class="toolkit-badge">Fonte Primária</span>
+                </div>
+                <span class="toolkit-link-desc">
+                  A fonte primária da verdade. Todo analista sério vai direto ao site de RI ler os <strong>Releases de Resultados</strong> trimestrais, ITRs e ouvir as <em>Conference Calls</em> com os diretores em vez de confiar apenas em manchetes de jornais.
+                </span>
+              </div>
+              <div class="toolkit-ext-icon" aria-hidden="true">↗</div>
+            </a>
+
+            <!-- Ferramenta 2: Simply Wall St -->
+            <a href="https://simplywall.st/" 
+               target="_blank" rel="noopener noreferrer" class="toolkit-link-btn" data-category="Visual Valuation">
+              <div class="toolkit-link-info">
+                <div class="toolkit-title-row">
+                  <span class="toolkit-link-title">Simply Wall St</span>
+                  <span class="toolkit-badge">Floco de Neve</span>
+                </div>
+                <span class="toolkit-link-desc">
+                  Excelente ferramenta visual com gráficos em formato de <strong>floco de neve</strong> (Snowflake) que sintetiza relatórios complexos de valuation (FCD automatizado), balanço patrimonial e saúde financeira de empresas brasileiras e globais.
+                </span>
+              </div>
+              <div class="toolkit-ext-icon" aria-hidden="true">↗</div>
+            </a>
+
+            <!-- Ferramenta 3: Status Invest & Fundamentus -->
+            <a href="https://statusinvest.com.br/" 
+               target="_blank" rel="noopener noreferrer" class="toolkit-link-btn" data-category="Múltiplos Brasil">
+              <div class="toolkit-link-info">
+                <div class="toolkit-title-row">
+                  <span class="toolkit-link-title">Status Invest / Fundamentus</span>
+                  <span class="toolkit-badge">Múltiplos B3</span>
+                </div>
+                <span class="toolkit-link-desc">
+                  O "feijão com arroz" do investidor brasileiro para puxar histórico de múltiplos (<strong class="term-val">P/L</strong>, <strong class="term-val">EV/EBITDA</strong>, <strong class="term-val">P/VP</strong>), margens de lucro, dividend yields e dados da B3 em poucos cliques.
+                </span>
+              </div>
+              <div class="toolkit-ext-icon" aria-hidden="true">↗</div>
+            </a>
+
+            <!-- Ferramenta 4: O Blog do Damodaran -->
+            <a href="https://aswathdamodaran.blogspot.com/" 
+               target="_blank" rel="noopener noreferrer" class="toolkit-link-btn" data-category="Referência Global">
+              <div class="toolkit-link-info">
+                <div class="toolkit-title-row">
+                  <span class="toolkit-link-title">O Blog do Damodaran (Musings on Markets)</span>
+                  <span class="toolkit-badge">Papa do Valuation</span>
+                </div>
+                <span class="toolkit-link-desc">
+                  O "Papa do Valuation" (Prof. Aswath Damodaran da NYU Stern) publica artigos gratuitos avaliando empresas reais em tempo real (ex: Nvidia, Uber, Tesla, Petrobras). Ler seu raciocínio narrativo e matemático é a melhor aula de Valuation da internet.
+                </span>
+              </div>
+              <div class="toolkit-ext-icon" aria-hidden="true">↗</div>
+            </a>
+
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Sticky Footer CTA Permanente -->
+  <footer class="sticky-footer-wrapper" role="region" aria-label="Ação de conclusão">
+    <div class="sticky-footer-container">
+      <button id="sticky-cta-btn" class="sticky-cta-btn" type="button">
+        <div class="cta-text-group">
+          <span class="cta-main-text">Estou Pronto: Iniciar Avaliação</span>
+          <span id="cta-progress-indicator" class="cta-status-badge">1/3 tópicos</span>
+        </div>
+        <span class="cta-arrow" aria-hidden="true">→</span>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Toast de Micro-tracking (< 5 segundos de leitura) -->
+  <div id="fast-click-toast" class="toast-container" role="alert" aria-live="assertive">
+    <div class="toast-header">
+      <span class="toast-icon">⚡</span>
+      <h3 class="toast-title">Tem certeza? Há dicas valiosas que você não leu!</h3>
+    </div>
+    <p class="toast-message">
+      Você clicou para iniciar a avaliação em menos de 5 segundos. Revisar o <strong>Fosso Econômico (<span class="term-val">Moat</span>)</strong> e o termômetro de <strong>Dívida Líquida / EBITDA</strong> vai blindar sua nota nas pegadinhas da prova!
+    </p>
+    <div class="toast-actions">
+      <button id="toast-review-btn" class="toast-btn toast-btn-review" type="button">Revisar Dicas</button>
+      <button id="toast-proceed-btn" class="toast-btn toast-btn-proceed" type="button">Avançar Mesmo Assim</button>
+    </div>
+  </div>
+
+  <!-- Modal / Bottom Sheet Pré-Prova -->
+  <div id="exam-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="exam-modal-title">
+    <div class="modal-sheet">
+      <div class="sheet-handle"></div>
+      
+      <div class="modal-header">
+        <h2 id="exam-modal-title" class="modal-title">Pronto para a Avaliação?</h2>
+        <button class="close-modal-btn close-modal-trigger" type="button" aria-label="Fechar modal">✕</button>
+      </div>
+
+      <div id="exam-modal-notice"></div>
+
+      <div class="summary-bullets">
+        <div class="summary-bullets-title">Checklist Rápido de Valuation:</div>
+        <ul class="summary-list">
+          <li><strong>Arte & Ciência:</strong> 50% matemática + 50% história (a narrativa precisa fechar com os números).</li>
+          <li><strong>GIGO:</strong> Premissas infladas no FCD geram valuations ilusórios (lixo entra, lixo sai).</li>
+          <li><strong>Moat:</strong> Empresas com vantagens duráveis (marca, custo de troca, efeito de rede) sustentam lucros.</li>
+          <li><strong>Lucro vs Caixa:</strong> Foque no Fluxo de Caixa Livre (FCL); lucro contábil sozinho não paga dívidas.</li>
+          <li><strong>Múltiplos:</strong> Nunca compare maçãs com laranjas; compare apenas pares do mesmo setor.</li>
+          <li><strong>Dívida Líquida / EBITDA:</strong> Acima de 3x acende o sinal amarelo de vulnerabilidade.</li>
+        </ul>
+      </div>
+
+      <button id="start-exam-final-btn" class="modal-primary-btn" type="button">
+        Confirmar e Abrir Avaliação
+      </button>
+      <button class="modal-secondary-btn close-modal-trigger" type="button">
+        Voltar e Rever Cards
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal de Telemetria do Professor -->
+  <div id="inspector-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="inspector-modal-title">
+    <div class="modal-sheet">
+      <div class="sheet-handle"></div>
+      
+      <div class="modal-header">
+        <h2 id="inspector-modal-title" class="modal-title">Telemetria & Micro-tracking (Docente)</h2>
+        <button class="close-modal-btn close-modal-trigger" type="button" aria-label="Fechar modal">✕</button>
+      </div>
+
+      <div class="telemetry-stats-row">
+        <div class="stat-box">
+          <div class="stat-label">Max Scroll</div>
+          <div id="inspector-max-scroll" class="stat-val">0%</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Eventos</div>
+          <div id="inspector-events-count" class="stat-val">0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Tempo Ativo</div>
+          <div id="inspector-session-time" class="stat-val">0s</div>
+        </div>
+      </div>
+
+      <div class="summary-bullets-title">Últimos Eventos de Leitura:</div>
+      <div id="inspector-events-list" class="events-scroll-area">
+        <p class="empty-events-text">Nenhum evento registrado ainda.</p>
+      </div>
+
+      <button id="copy-metrics-btn" class="modal-primary-btn" type="button">
+        Copiar Relatório JSON para LMS
+      </button>
+      <button class="modal-secondary-btn close-modal-trigger" type="button">
+        Fechar Painel
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./js/analytics.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
