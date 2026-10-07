@@ -1,5 +1,7 @@
 # 📡 Passo 6 — Radar do Investidor: Avaliação de Empresas (Valuation)
 
+> 🌐 **Acesso Online (GitHub Pages):** [https://ramaandrade.github.io/radar-investidor-valuation/](https://ramaandrade.github.io/radar-investidor-valuation/)  
+> 📦 **Repositório GitHub:** [https://github.com/ramaandrade/radar-investidor-valuation](https://github.com/ramaandrade/radar-investidor-valuation)  
 > 📱 **Formato:** App Web Mobile (*Single-Page Scroller*) Mobile-First & Fast Page  
 > 🧭 **Posição na Trilha:** Passo 6 de 6 (Etapa final antes da avaliação formal)  
 > 🏛️ **Público-Alvo:** Estudantes de Finanças Corporativas, Ciências Contábeis, Administração e Mercado de Capitais  
